@@ -53,7 +53,7 @@ module.exports = {
         }
     },
     getEditTodo: async (req,res)=>{
-        console.log(req.user, "hello getEditTodo")
+        
         try{
             const todoItems = await Todo.findOne({_id:req.params.id})
             res.render('edit.ejs', {todos: todoItems, user: req.user})

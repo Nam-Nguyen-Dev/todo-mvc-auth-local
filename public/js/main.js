@@ -73,12 +73,15 @@ async function markIncomplete(){
 
 async function editTodo(){
     const todoId = this.dataset.id
+    const todoBody = document.getElementById('todoValue').value
+    console.log(todoBody)
     try{
-        const response = await fetch('todos/markIncomplete', {
+        const response = await fetch('todos/edit', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                'todoIdFromJSFile': todoId,
+                'todoBodyFromJSFile': todoBody
             })
         })
         const data = await response.json()

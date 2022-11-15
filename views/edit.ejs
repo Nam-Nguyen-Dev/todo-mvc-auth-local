@@ -5,19 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <p>Old Todo: <b><%= todos.todo %></b></p>
     
        
-    <form>
         <span>New Todo: </span>
-        <input type="text" name='todoValue'>
+        <input type="text" name='todoValue' id='todoValue'>
         <button id="updateTodo" data-id='<%=todos._id%>'>Submit</button>
-    </form>
 
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
