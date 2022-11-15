@@ -15,4 +15,6 @@ router.delete('/deleteTodo', todosController.deleteTodo)
 
 router.get('/edit/:id', todosController.getEditTodo)
 
+router.put('/edit', todosController.putEditTodo)
+
 module.exports = router

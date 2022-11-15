@@ -53,10 +53,20 @@ module.exports = {
         }
     },
     getEditTodo: async (req,res)=>{
-        
         try{
             const todoItems = await Todo.findOne({_id:req.params.id})
             res.render('edit.ejs', {todos: todoItems, user: req.user})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    putEditTodo: async (req, res)=>{
+        try{
+            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
+                todo: req.body.todoBodyFromJSFile
+            })
+            console.log('Todo updated')
+            res.json('Todo updated')
         }catch(err){
             console.log(err)
         }

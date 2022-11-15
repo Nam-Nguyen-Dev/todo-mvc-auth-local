@@ -76,7 +76,7 @@ async function editTodo(){
     const todoBody = document.getElementById('todoValue').value
     console.log(todoBody)
     try{
-        const response = await fetch('todos/edit', {
+        const response = await fetch('/todos/edit', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -86,7 +86,7 @@ async function editTodo(){
         })
         const data = await response.json()
         console.log(data)
-        location.reload()
+        location.href = '/todos'
     }catch(err){
         console.log(err)
     }
